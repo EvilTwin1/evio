@@ -8,21 +8,47 @@ $( document ).ready(function() {
     });
 
 
-    $('.owl-carousel').owlCarousel({
+    $('.test2').owlCarousel({
       loop:true,
-      margin:10,
-      nav:true,
+      nav:false,
+      dots:true,
       responsive:{
-          0:{
+          320:{
               items:1
           },
-          600:{
-              items:3
+          700:{
+              items:2
           },
-          1000:{
-              items:5
+          1200:{
+            items:3
+        },
+          1400:{
+              items:4
           }
       }
     })
+
+
+    $('.test').owlCarousel({
+      loop:true,
+      nav:false,
+     
+      dots:true,
+      responsive:{
+          320:{
+              items:1
+          },
+          700:{
+              items:2
+          },
+          1200:{
+            items:3
+        },
+          1400:{
+              items:3
+          }
+      }
+    })
+
 
 });
