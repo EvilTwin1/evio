@@ -1,0 +1,198 @@
+@import "font";
+@import "vars";
+//---------------------------------------------------------------------------------
+//
+//      BLOCKS
+//
+//---------------------------------------------------------------------------------
+
+/*Видео*/
+
+video{
+    position: absolute;
+    top: 0;
+    left: 0;
+    object-fit: cover;
+    width: 100%;
+    height: 100vh;
+}
+
+/*Логотип*/
+
+.logo{
+    color: white;
+    font-family: Catamaran;
+    font-size: 22px;
+    font-weight: 900;
+    line-height: 25px;
+    text-transform: uppercase;
+    &--header{
+            padding: 20px;
+        }  
+    a{
+        text-decoration: none;
+        color: white;
+    }
+}
+
+/*Заголовок*/
+
+.title {
+    position: relative;
+    display: inline-block;
+    font-family: Catamaran;
+    font-size: 56px;
+    font-weight: 700;
+    text-align: center;
+    margin: 0;
+    &::before{
+        content: "";
+        display: block;
+        width: 16px;
+        height: 16px;
+        position: absolute;
+        top: -27px;
+        left: -16px;
+        border-top: 2px solid $yellow;
+        border-left: 2px solid $yellow;
+    }
+    &::after{
+        content: "";
+        display: block;
+        width: 16px;
+        height: 16px;
+        position: absolute;
+        top: -27px;
+        right: -16px;
+        border-top: 2px solid $yellow;
+        border-right: 2px solid $yellow;
+    }
+}
+
+/*Описание на страницах*/
+
+.description {
+    font-family: "PT Serif";
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 26px;
+}
+
+/*Кнопка*/
+
+.button {
+    display: inline-block;
+    color: white;
+    font-family: Catamaran;
+    font-size: 11px;
+    font-weight: 700;
+    line-height: 30px;
+    text-transform: uppercase;
+    padding: 10px 21px;
+    border: 1px solid #fff;
+    text-decoration: none;
+    margin: 0px auto;
+    position: relative;
+    
+    &::before{
+        content: "";
+        height: 1px;
+        width: 30px;
+        position: absolute;
+        top: 23px;
+        left: -21px;
+        background-color: $yellow;
+    }
+    &::after{
+        content: "";
+        height: 1px;
+        width: 30px;
+        position: absolute;
+        top: 23px;
+        right: -21px;
+        background-color: $yellow;
+    }
+}
+
+/*Иконки социальных сетей*/
+
+.social {
+    padding: 0px;
+    margin: 0px;
+    transition: 2.5s;
+
+    &--team{
+        display: none;
+        margin-bottom: 45px;
+    }
+
+    &__item {
+        width: 36px;
+        height: 36px;
+        margin: 10px;
+        display: inline-block;
+        border: 1px solid #fff;
+        color: #fff;
+        &--footer{
+            border: 1px solid #383838;
+        }
+        transition: .5s;
+        &:hover{
+            background-color: #ffdf01;
+            border: 1px solid #ffdf01;
+            color: #000;
+        }
+    }
+
+    &__link{
+        display: block;
+        width: 100%;
+        height: 100%;
+        color: #fff;
+        text-align: center;
+        line-height: 2;
+        &--footer{
+            color: #383838;
+        }
+        
+    }
+        
+}
+
+/* Заголовок в шапках на страницах*/
+
+.main-title-page{
+    color: white;
+    font-family: Catamaran;
+    font-size: 80px;
+    font-weight: 900;
+    line-height: 25px;
+    text-transform: uppercase;
+    position: relative;
+    &::before{
+        content: "";
+        display: block;
+        width: 136px;
+        height: 21px;
+        position: absolute;
+        border: 2px solid #ffdf01;
+        border-bottom: 1px solid transparent;
+        top: -50px;
+        left: 50%;
+        transform: translateX(-50%);
+    
+    }
+    &::after{
+        content: "";
+        display: block;
+        width: 136px;
+        height: 21px;
+        position: absolute;
+        border: 2px solid #ffdf01;
+        border-top: 1px solid transparent;
+        top: 43px;
+        left: 50%;
+        transform: translateX(-50%);
+    
+    }
+}

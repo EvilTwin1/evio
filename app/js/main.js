@@ -1,12 +1,24 @@
 $( document ).ready(function() {
+
     $('.burger').click(function () {
-		$('.menu').addClass('active-menu');
+		  $('.menu').addClass('active-menu');
     });
     
     $('.close_menu').click(function () {
-		$('.menu').removeClass('active-menu');
+		  $('.menu').removeClass('active-menu');
     });
 
+
+  $(' .blog').slice(0, 1).show();
+
+  $('#loadMore').on('click', function (event) {
+      event.preventDefault();
+
+      $('.blog:hidden').slice(0, 1).slideDown();
+      if ($('.blog:hidden').length === 0) {
+          $('#loadMore').fadeOut();
+      }
+  });
 
     $('.test2').owlCarousel({
       loop:true,

@@ -97,7 +97,29 @@
 
 
 /* Extra Small Devices, Phones */
-@media only screen and (max-width : 480px) {}
+@media only screen and (max-width : 480px) {
+    .blog{
+
+        &__info{
+            display: block;
+            background-color: transparent;
+        }
+        &__auter {
+            display: inline-block;
+            margin: 0px 10px 0px 0px;
+        }
+
+        &__like {
+            display: inline-block;
+            margin: 0px 10px 0px 0px;
+        }
+
+        &__comment {
+            display: inline-block;
+            margin: 0px 10px 0px 0px;
+        }
+    }
+}
 
 /**/
 
