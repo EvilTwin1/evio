@@ -20,6 +20,50 @@ $( document ).ready(function() {
       }
   });
 
+
+  $('.test5').owlCarousel({
+    loop:true,
+    nav:false,
+    item: 5,
+    dots:true,
+    responsive:{
+        320:{
+          items:1
+        },
+        500:{
+          items:2
+        },
+        700:{
+          items:3
+        },
+        1000:{
+          items:3
+        },
+        1200:{
+          items:4
+        },
+        1400:{
+          items:5
+        }
+    }
+  })
+
+  $('.test4').owlCarousel({
+    loop:true,
+    nav:false,
+    dots:true,
+    // center:true,
+    items:1
+  })
+
+
+    $('.test3').owlCarousel({
+    loop:true,
+    nav:false,
+    dots:true,
+    items:1
+  })
+
     $('.test2').owlCarousel({
       loop:true,
       nav:false,
@@ -44,7 +88,6 @@ $( document ).ready(function() {
     $('.test').owlCarousel({
       loop:true,
       nav:false,
-     
       dots:true,
       responsive:{
           320:{

@@ -1,9 +1,10 @@
 {
-  "name": "startLayout",
+  "name": "evio",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
   "dependencies": {
+    "gulp-sourcemaps": "^2.6.5",
     "jquery": "^3.4.1",
     "npm": "^6.11.3"
   },
@@ -12,6 +13,7 @@
     "del": "^5.1.0",
     "gulp": "^4.0.2",
     "gulp-autoprefixer": "^7.0.0",
+    "gulp-clean": "^0.4.0",
     "gulp-clean-css": "^4.2.0",
     "gulp-concat": "^2.6.1",
     "gulp-imagemin": "^6.1.0",

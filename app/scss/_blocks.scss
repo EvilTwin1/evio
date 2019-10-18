@@ -7,7 +7,6 @@
 //---------------------------------------------------------------------------------
 
 /*Видео*/
-
 video{
     position: absolute;
     top: 0;
@@ -18,7 +17,6 @@ video{
 }
 
 /*Логотип*/
-
 .logo{
     color: white;
     font-family: Catamaran;
@@ -36,7 +34,6 @@ video{
 }
 
 /*Заголовок*/
-
 .title {
     position: relative;
     display: inline-block;
@@ -70,7 +67,6 @@ video{
 }
 
 /*Описание на страницах*/
-
 .description {
     font-family: "PT Serif";
     font-size: 16px;
@@ -79,7 +75,6 @@ video{
 }
 
 /*Кнопка*/
-
 .button {
     display: inline-block;
     color: white;
@@ -115,7 +110,6 @@ video{
 }
 
 /*Иконки социальных сетей*/
-
 .social {
     padding: 0px;
     margin: 0px;
@@ -160,7 +154,6 @@ video{
 }
 
 /* Заголовок в шапках на страницах*/
-
 .main-title-page{
     color: white;
     font-family: Catamaran;
@@ -194,5 +187,51 @@ video{
         left: 50%;
         transform: translateX(-50%);
     
+    }
+}
+
+/* Заголовок секций на странице*/
+.pages-title {
+    color: #333;
+    font-family: Catamaran;
+    font-size: 56px;
+    font-weight: 900;
+    text-transform: uppercase;
+    position: relative;
+    padding: 0px 10px;
+    display: inline-block;
+    line-height: 1;
+    &::before{
+        content: "";
+        position: absolute;
+        display: inline-block;
+        width: fill-available;
+        height: 15px;
+        left: 50%;
+        top:50%;
+        transform: translate(-50%,-75%);
+        background-color: #ffdf01;
+        z-index: -1;
+    }
+}
+
+/* Описание секций на странице*/
+.pages-description {
+    color: #555;
+    font-family: PTSerif;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 26px;
+}
+
+.button__blog{
+    border: 1px solid #ffdf01;
+    color: #333;
+    padding: 10px 100px;
+    &::before{
+        background-color: #222;
+    }
+    &::after{
+        background-color: #222;
     }
 }

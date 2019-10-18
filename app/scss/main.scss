@@ -3,6 +3,7 @@
 @import "vars";
 @import "blocks";
 @import "blog-page";
+@import "about-page";
 
 
 //---------------------------------------------------------------------------------
@@ -377,7 +378,15 @@ div .work__item--md-reverse>.name__name::after{
 
     &__item {
         position: relative;
-        margin-bottom: 150px;
+        margin-bottom: 120px;
+        &--about{
+            &:hover .team__info--about{
+                display: flex;
+                height: 160px !important; 
+            }
+            
+        }
+
         &:hover .team__info{
             height: 233px; 
         }
@@ -412,6 +421,10 @@ div .work__item--md-reverse>.name__name::after{
         left: 50%;
         transform: translateX(-50%);
         transition: .7s;
+        &--about{
+            display: none;
+            width: 234px;
+        }
     }
     
     &__name {
@@ -451,7 +464,7 @@ div .work__item--md-reverse>.name__name::after{
 
 /*hero-section*/
 .hero {
-    background-image: url('/img/nasa.jpg');
+    background-image: url('../img/nasa.jpg');
     background-attachment: fixed;
     background-color: rgba(0, 0, 0, 0.8);
     padding: 200px 16px;
@@ -577,7 +590,7 @@ div .work__item--md-reverse>.name__name::after{
 
     &__text{
         color: #919191;
-        font-family: "PT Serif";
+        font-family: "PTSerif";
         font-size: 14px;
         font-weight: 400;
         line-height: 22px;

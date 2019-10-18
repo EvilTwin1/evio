@@ -7,6 +7,7 @@ const	autoprefixer  = require('gulp-autoprefixer');
 const	cleanCSS      = require('gulp-clean-css');
 const	uglify        = require('gulp-uglify');
 const	rename        = require('gulp-rename');
+const   clean         = require('gulp-clean');
 const   browserSync   = require('browser-sync').create();
 
 
@@ -20,7 +21,7 @@ function styles(){
 		cascade: false
 	}))
 	.pipe(cleanCSS({
-		level: 1
+		level: 2
 	}))
 	.pipe(rename({
 		suffix: '.min'
@@ -85,14 +86,27 @@ function replaceFonts() {
 		.pipe(gulp.dest('dist/webfonts'))
 }
 
+function replaceVideo() {
+	return gulp.src('app/video/*.*')
+		.pipe(gulp.dest('dist/video'))
+}
+
 function replaceStyles() {
 	return gulp.src('app/css/*.*')
+	// .pipe(sourcemaps.init({largeFile: true}))
+	// .pipe(sourcemaps.write(''))
 	.pipe(gulp.dest('dist/css'));
 }
 
 function replaceScripts(){
 	return gulp.src('app/js/script.min.js')
 	.pipe(gulp.dest('dist/js'))
+}
+
+ 
+function cleanDir() {
+    return gulp.src('dist')
+        .pipe(clean({force: true}))
 }
 
 function watch(){
@@ -108,4 +122,4 @@ function watch(){
 }
 gulp.task('default', watch);
 
-gulp.task('build', gulp.series(styles,libsJs,mainJs,scripts,libsJs,mainJs,scripts, replaceHtml, replaceLibs, replaceImagemin, replaceFonts, replaceStyles, replaceScripts));
+gulp.task('build', gulp.series(cleanDir,styles,libsJs,mainJs,scripts,libsJs,mainJs,scripts, replaceHtml, replaceLibs, replaceImagemin, replaceFonts, replaceVideo, replaceStyles, replaceScripts));
