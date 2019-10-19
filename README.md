@@ -15,4 +15,4 @@ Total execution time 69 milliseconds.
 </p>
 
 <h2>PageSpeed Insights</h2>
-https://developers.google.com/speed/pagespeed/insights/?hl=RU&url=https%3A%2F%2Feviltwin1.github.io%2Fevio%2Fabout.html&tab=mobile
+https://developers.google.com/speed/pagespeed/insights/?hl=RU&url=https%3A%2F%2Feviltwin1.github.io%2Fevio%2F
