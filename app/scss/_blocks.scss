@@ -133,7 +133,7 @@ video{
         transition: .5s;
         &:hover{
             background-color: #ffdf01;
-            border: 1px solid #ffdf01;
+            border: 1px solid transparent;
             color: #000;
         }
     }
@@ -200,12 +200,13 @@ video{
     position: relative;
     padding: 0px 10px;
     display: inline-block;
-    line-height: 1;
+    line-height: 1; 
+
     &::before{
         content: "";
         position: absolute;
         display: inline-block;
-        width: fill-available;
+        width: 100%;
         height: 15px;
         left: 50%;
         top:50%;

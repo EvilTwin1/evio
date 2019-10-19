@@ -1,7 +1,7 @@
 const 	gulp 		  = require('gulp');
 const	imagemin 	  = require('gulp-imagemin');
 const	concat        = require('gulp-concat');
-// const	sourcemaps    = require('gulp-sourcemaps');
+const	sourcemaps    = require('gulp-sourcemaps');
 const	sass          = require('gulp-sass');
 const	autoprefixer  = require('gulp-autoprefixer');
 const	cleanCSS      = require('gulp-clean-css');
@@ -14,19 +14,19 @@ const   browserSync   = require('browser-sync').create();
 
 function styles(){
 	return gulp.src('app/scss/*.*')
-	// .pipe(sourcemaps.init())
+	.pipe(sourcemaps.init())
 	.pipe(sass())
 	.pipe(autoprefixer({
 		overrideBrowserslist: ['last 2 versions'],
 		cascade: false
 	}))
 	.pipe(cleanCSS({
-		level: 2
+		level: 1
 	}))
 	.pipe(rename({
 		suffix: '.min'
 	}))
-	// .pipe(sourcemaps.write('/'))
+	.pipe(sourcemaps.write('/'))
 	.pipe(gulp.dest('app/css'))
 	.pipe(browserSync.reload({stream: true}));
 }
@@ -93,8 +93,6 @@ function replaceVideo() {
 
 function replaceStyles() {
 	return gulp.src('app/css/*.*')
-	// .pipe(sourcemaps.init({largeFile: true}))
-	// .pipe(sourcemaps.write(''))
 	.pipe(gulp.dest('dist/css'));
 }
 
@@ -122,4 +120,5 @@ function watch(){
 }
 gulp.task('default', watch);
 
-gulp.task('build', gulp.series(cleanDir,styles,libsJs,mainJs,scripts,libsJs,mainJs,scripts, replaceHtml, replaceLibs, replaceImagemin, replaceFonts, replaceVideo, replaceStyles, replaceScripts));
+// gulp.task('build', gulp.series(cleanDir,styles,libsJs,mainJs,scripts,libsJs,mainJs,scripts, replaceHtml, replaceLibs, replaceImagemin, replaceFonts, replaceVideo, replaceStyles, replaceScripts));
+gulp.task('build', gulp.series(cleanDir,gulp.parallel(styles,libsJs,mainJs,scripts), replaceHtml, replaceLibs, replaceImagemin, replaceFonts, replaceVideo, replaceStyles, replaceScripts));

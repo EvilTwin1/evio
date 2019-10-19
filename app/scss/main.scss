@@ -29,27 +29,6 @@ header{
         position: relative;
         text-align: center;
         z-index: 10;
-        &::after{
-            content: "";
-            display: block;
-            width: 0%;
-            height: 3px;
-            background-color: $yellow;
-            position: absolute;
-            top: 30px;
-            z-index: -1;
-            left: 0%;  
-            transition: width .3s;
-            
-        }
-        &:hover{
-            &::after{
-                content: "";
-                
-                width: 100%;
-            } 
-        }
-         
         a{
             font-size: 11px;
             color: white;
@@ -58,9 +37,40 @@ header{
             line-height: 25px;
             text-transform: uppercase;
             text-decoration: none;
+            &::after{
+                content: "";
+                display: block;
+                width: 0%;
+                height: 3px;
+                background-color: $yellow;
+                position: absolute;
+                top: 30px;
+                z-index: -1;
+                left: 0%;  
+                transition: width .3s;
+                
+            }
+            &:hover{
+                &::after{
+                    width: 100%;
+                } 
+            }
         }
     }
-
+    .active-menu-item{
+        &::after{
+                content: "";
+                display: block;
+                width: 100% ;
+                height: 3px;
+                background-color: $yellow;
+                position: absolute;
+                top: 30px;
+                z-index: -1;
+                left: 0%;  
+                transition: width .3s;     
+            }
+    }
     .close_menu{
         display: none;
         i{
@@ -404,7 +414,7 @@ div .work__item--md-reverse>.name__name::after{
     &__content {
         width: 100%;
         background-color: #8c8c8c;
-        margin: auto
+        margin: auto;
     }
 
     &__info{
@@ -460,7 +470,7 @@ div .work__item--md-reverse>.name__name::after{
 
 }
 /*end-team-section*/
-
+ 
 
 /*hero-section*/
 .hero {
@@ -470,6 +480,7 @@ div .work__item--md-reverse>.name__name::after{
     padding: 200px 16px;
     text-align: center;
     position: relative;
+    
     &__title {
         color: white;
         font-family: Catamaran;
