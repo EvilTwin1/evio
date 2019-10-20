@@ -1,7 +1,7 @@
 const 	gulp 		  = require('gulp');
 const	imagemin 	  = require('gulp-imagemin');
 const	concat        = require('gulp-concat');
-const	sourcemaps    = require('gulp-sourcemaps');
+// const	sourcemaps    = require('gulp-sourcemaps');
 const	sass          = require('gulp-sass');
 const	autoprefixer  = require('gulp-autoprefixer');
 const	cleanCSS      = require('gulp-clean-css');
@@ -14,7 +14,7 @@ const   browserSync   = require('browser-sync').create();
 
 function styles(){
 	return gulp.src('app/scss/*.*')
-	.pipe(sourcemaps.init())
+	// .pipe(sourcemaps.init())
 	.pipe(sass())
 	.pipe(autoprefixer({
 		overrideBrowserslist: ['last 2 versions'],
@@ -26,7 +26,7 @@ function styles(){
 	.pipe(rename({
 		suffix: '.min'
 	}))
-	.pipe(sourcemaps.write('/'))
+	// .pipe(sourcemaps.write('/'))
 	.pipe(gulp.dest('app/css'))
 	.pipe(browserSync.reload({stream: true}));
 }
