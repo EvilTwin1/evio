@@ -94,6 +94,9 @@
 
 /* Small Devices, Tablets */
 @media only screen and (max-width : 768px) {
+    .masonryholder{
+        column-count: 1;
+      }
 
     .hero{
         padding: 200px 16px;
@@ -230,6 +233,10 @@
     .development__baner{
         height: 250px;
     }
+
+    .masonryholder{
+        column-count: 2;
+      }
 }
 /**/
 
@@ -240,10 +247,18 @@
     .development__baner{
         height: 400px;
     }
+
+    .masonryholder{
+        column-count: 3;
+      }
 }
 /**/
 
 
 /* Large Devices, Wide Screens */
-@media only screen and (min-width : 1200px) {}
+@media only screen and (min-width : 1200px) {
+    .masonryholder{
+        column-count: 3;
+      }
+}
 /**/

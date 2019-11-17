@@ -1,7 +1,7 @@
 const 	gulp 		  = require('gulp');
 const	imagemin 	  = require('gulp-imagemin');
 const	concat        = require('gulp-concat');
-// const	sourcemaps    = require('gulp-sourcemaps');
+const	sourcemaps    = require('gulp-sourcemaps');
 const	sass          = require('gulp-sass');
 const	autoprefixer  = require('gulp-autoprefixer');
 const	cleanCSS      = require('gulp-clean-css');
@@ -11,10 +11,9 @@ const   clean         = require('gulp-clean');
 const   browserSync   = require('browser-sync').create();
 
 
-
 function styles(){
 	return gulp.src('app/scss/*.*')
-	// .pipe(sourcemaps.init())
+	.pipe(sourcemaps.init())
 	.pipe(sass())
 	.pipe(autoprefixer({
 		overrideBrowserslist: ['last 2 versions'],
@@ -26,10 +25,11 @@ function styles(){
 	.pipe(rename({
 		suffix: '.min'
 	}))
-	// .pipe(sourcemaps.write('/'))
+	.pipe(sourcemaps.write('/'))
 	.pipe(gulp.dest('app/css'))
 	.pipe(browserSync.reload({stream: true}));
 }
+
 
 function libsJs() {
 	return gulp.src([
@@ -41,13 +41,14 @@ function libsJs() {
 	
 }
 
+
 function mainJs() {
 	return gulp.src([
 		'app/js/main.js'
 		])
 	.pipe(gulp.dest('app/js'))
-	
 }
+
 
 function scripts(){
 	return gulp.src([
@@ -65,15 +66,18 @@ function scripts(){
 	.pipe(browserSync.reload({stream: true}));
 }
 
+
 function replaceHtml() {
 	return gulp.src('app/*.html')
 		.pipe(gulp.dest('dist'))
 }
 
+
 function replaceLibs() {
 	return gulp.src('app/libs/**/*.*')
 		.pipe(gulp.dest('dist/libs'))
 }
+
 
 function replaceImagemin() {
 	return gulp.src('app/img/**/*')
@@ -81,20 +85,24 @@ function replaceImagemin() {
 		.pipe(gulp.dest('dist/img'))
 }
 
+
 function replaceFonts() {
 	return gulp.src('app/webfonts/**/*')
 		.pipe(gulp.dest('dist/webfonts'))
 }
+
 
 function replaceVideo() {
 	return gulp.src('app/video/*.*')
 		.pipe(gulp.dest('dist/video'))
 }
 
+
 function replaceStyles() {
 	return gulp.src('app/css/*.*')
 	.pipe(gulp.dest('dist/css'));
 }
+
 
 function replaceScripts(){
 	return gulp.src('app/js/script.min.js')
@@ -107,6 +115,7 @@ function cleanDir() {
         .pipe(clean({force: true}))
 }
 
+
 function watch(){
 	browserSync.init({
 		server: {
@@ -114,11 +123,12 @@ function watch(){
 		},
 		notify: false
 	});
-	gulp.watch('app/scss/**/*.scss', styles);
+	gulp.watch('app/scss/*.scss', styles);
 	gulp.watch(['app/js/**/main.js','app/js/**/libs.js'], gulp.series(scripts));
 	gulp.watch("app/*.html").on('change', browserSync.reload);
 }
+
+
 gulp.task('default', watch);
 
-// gulp.task('build', gulp.series(cleanDir,styles,libsJs,mainJs,scripts,libsJs,mainJs,scripts, replaceHtml, replaceLibs, replaceImagemin, replaceFonts, replaceVideo, replaceStyles, replaceScripts));
-gulp.task('build', gulp.series(cleanDir,gulp.parallel(styles,libsJs,mainJs,scripts), replaceHtml, replaceLibs, replaceImagemin, replaceFonts, replaceVideo, replaceStyles, replaceScripts));
+gulp.task('build', gulp.series(cleanDir,styles,libsJs,mainJs,scripts, replaceHtml, replaceLibs, replaceImagemin, replaceFonts, replaceVideo, replaceStyles, replaceScripts));
