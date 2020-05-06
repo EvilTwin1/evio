@@ -15,7 +15,8 @@ Total execution time 69 milliseconds.
 </p>
 
 <h2>PageSpeed Insights</h2>
-This site was built using [GitHub Pages](https://pages.github.com/)
+
+
 ```
 See [result](https://developers.google.com/speed/pagespeed/insights/?hl=RU&url=https%3A%2F%2Feviltwin1.github.io%2Fevio%2F/)
 ```
